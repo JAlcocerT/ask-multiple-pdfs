@@ -18,9 +18,11 @@ volumes:
 #podman build -t chat_multiple_pdf .
 
 #docker run -p 8501:8501 chat_multiple_pdf:latest
+#docker exec -it chat_multiple_pdf /bin/bash
+
 #sudo docker run -it -p 8502:8501 chat_multiple_pdf:latest /bin/bash
 
-#streamlit run app2.py
+#streamlit run appv2.py
 
 
 # docker run -d --name chat_multiple_pdf \

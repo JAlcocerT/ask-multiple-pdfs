@@ -5,7 +5,8 @@
    * No need to hardcode API's: can be passed as input in UI / as environment variable
    * Docker Container with dependencies
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/e9hJZrT7HLw?si=cJBexUGYlvmNNJzv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[![Ask PDF with LangChain](https://img.youtube.com/vi/e9hJZrT7HLw/0.jpg)](https://www.youtube.com/watch?v=e9hJZrT7HLw)
 
 ---
 
@@ -39,9 +40,9 @@ To install the MultiPDF Chat App, please follow these steps:
 1. Clone the repository to your local machine.
 
 2. Install the required dependencies by running the following command:
-   ```
-   pip install -r requirements.txt
-   ```
+```sh
+pip install -r requirements.txt
+```
 
 3. Obtain an API key from OpenAI and add it to the `.env` file in the project directory.
 ```commandline
