@@ -1,0 +1,82 @@
+version: '3'
+
+services:
+  streamlit-embeddings-pdfs:
+    image: chat_multiple_pdf
+    container_name: chat_multiple_pdf
+    volumes:
+      - ai_chat_multiple_pdf:/app
+    working_dir: /app  # Set the working directory to /app
+    command: streamlit run appv2.py # tail -f /dev/null
+    ports:
+      - "8501:8501"    
+
+volumes:
+  ai_chat_multiple_pdf:
+
+#docker build -t chat_multiple_pdf .
+#podman build -t chat_multiple_pdf .
+
+#docker run -p 8501:8501 chat_multiple_pdf:latest
+#sudo docker run -it -p 8502:8501 chat_multiple_pdf:latest /bin/bash
+
+#streamlit run app2.py
+
+
+# docker run -d --name chat_multiple_pdf \
+#            -v ai_chat_multiple_pdf:/app \
+#            -w /app \
+#            -p 8501:8501 \
+#            chat_multiple_pdf \
+#            streamlit run appv2.py
+
+
+# docker run -p 8501:8501 \
+# --name chat_multiple_pdf \
+# -e OPENAI_API_KEY= \
+# -e HUGGINGFACE_API_TOKEN= \
+# -v ai_chat_multiple_pdf:/app \
+# -w /app \
+# -d chat_multiple_pdf \
+# streamlit run appv2.py
+
+
+# version: '3'
+
+# services:
+#   streamlit-embeddings-pdfs:
+#     image: chat_multiple_pdf
+#     container_name: chat_multiple_pdf
+#     volumes:
+#       - ai_chat_multiple_pdf:/app
+#     working_dir: /app
+#     command: streamlit run appv2.py
+#     ports:
+#       - "8501:8501"
+#     environment:
+#       - OPENAI_API_KEY=
+#       - HUGGINGFACE_API_TOKEN=
+
+# volumes:
+#   ai_chat_multiple_pdf:
+
+
+
+# version: '3'
+
+# services:
+#   streamlit-embeddings-pdfs:
+#     image: chat_multiple_pdf
+#     container_name: chat_multiple_pdf
+#     volumes:
+#       - ai_chat_multiple_pdf:/app
+#     working_dir: /app
+#     command: streamlit run appv2.py
+#     ports:
+#       - "8501:8501"
+#     environment:
+#       - OPENAI_API_KEY=your_openai_api_key
+#       - HUGGINGFACE_API_TOKEN=your_hf_api_key
+
+# volumes:
+#   ai_chat_multiple_pdf:

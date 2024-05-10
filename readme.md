@@ -1,5 +1,14 @@
 # MultiPDF Chat App
 
+* Original: https://github.com/alejandro-ao/ask-multiple-pdfs
+* Improved:
+   * No need to hardcode API's: can be passed as input in UI / as environment variable
+   * Docker Container with dependencies
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e9hJZrT7HLw?si=cJBexUGYlvmNNJzv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
 > You can find the tutorial for this project on [YouTube](https://youtu.be/dXxQ0LR-3Hg).
 
 ## Introduction
