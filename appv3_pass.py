@@ -18,6 +18,11 @@ from langchain.chains import ConversationalRetrievalChain
 
 from htmlTemplates import css, bot_template, user_template
 
+# Import your authenticator functions
+#import Auth_functions as af
+from Z_Functions import Auth_functions as af
+
+
 
 # import huggingface_hub
 #https://huggingface.co/docs/huggingface_hub/en/guides/inference
@@ -27,12 +32,6 @@ from htmlTemplates import css, bot_template, user_template
 #     model_kwargs={"model_file": "/path/to/local/model.pt"},
 # )
 
-st.set_page_config(page_title="Chat with multiple PDFs", page_icon=":books:")
-
-
-# Load your API keys using Streamlit text input widgets
-openai_api_key = st.text_input("Enter your OpenAI API Key:")
-huggingfacehub_api_token = st.text_input("Enter your HuggingFace Hub API Token:")
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -107,5 +106,16 @@ def main():
                 vectorstore = get_vectorstore(text_chunks)
                 st.session_state.conversation = get_conversation_chain(vectorstore)
 
-if __name__ == '__main__':
-    main()
+
+if af.login():
+
+    st.set_page_config(page_title="Chat with multiple PDFs", page_icon=":books:")
+
+
+    # Load your API keys using Streamlit text input widgets
+    openai_api_key = st.text_input("Enter your OpenAI API Key:")
+    huggingfacehub_api_token = st.text_input("Enter your HuggingFace Hub API Token:")
+
+
+    if __name__ == '__main__':
+        main()
