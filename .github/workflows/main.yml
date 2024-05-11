@@ -28,4 +28,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/AlcocerT/ask-multiple-pdfs:v1.0
+        tags: ghcr.io/jalcocert/ask-multiple-pdfs:v1.0
