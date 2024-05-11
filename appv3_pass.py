@@ -19,8 +19,8 @@ from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
 
 # Import your authenticator functions
-#import Auth_functions as af
-from Z_Functions import Auth_functions as af
+import Auth_functions as af
+#from Z_Functions import Auth_functions as af
 
 
 

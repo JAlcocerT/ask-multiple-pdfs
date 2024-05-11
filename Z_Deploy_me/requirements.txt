@@ -8,3 +8,5 @@ faiss-cpu==1.7.4
 
 openai==0.28.1
 tiktoken==0.5.1
+
+streamlit-authenticator==0.1.5 #https://pypi.org/project/streamlit-authenticator/

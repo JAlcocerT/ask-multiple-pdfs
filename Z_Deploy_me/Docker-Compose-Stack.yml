@@ -16,12 +16,16 @@ volumes:
   ai_chat_multiple_pdf:
 
 #docker build -t chat_multiple_pdf .
+
+#export DOCKER_BUILDKIT=1
 #docker build --no-cache -t chat_multiple_pdf .
+
+#docker build --no-cache -t chat_multiple_pdf . > build_log.txt 2>&1
 
 #podman build -t chat_multiple_pdf .
 
-#docker run -p 8501:8501 chat_multiple_pdf:latest
-#docker exec -it chat_multiple_pdf /bin/bash
+#docker run -p 8501:8501 chat_multiple_pdf2:latest --name pdf
+#docker exec -it pdf /bin/bash
 
 #export OPENAI_API_KEY="Your-OpenAI-API-Key"
 
