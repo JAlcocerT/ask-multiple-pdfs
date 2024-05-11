@@ -4,7 +4,13 @@
 * Improved:
    * No need to hardcode API's: can be passed as input in UI / as environment variable
    * Docker Container with dependencies
+   * Added Github Actions CI/CD
 
+Use the build docker Image with [this configuration](https://github.com/JAlcocerT/ask-multiple-pdfs/blob/main/Z_Deploy_me/Docker-Compose-Stack.yml):
+
+```sh
+sudo docker pull ghcr.io/jalcocert/ask-multiple-pdfs:v1.0
+```
 
 [![Ask PDF with LangChain](https://img.youtube.com/vi/e9hJZrT7HLw/0.jpg)](https://www.youtube.com/watch?v=e9hJZrT7HLw)
 
