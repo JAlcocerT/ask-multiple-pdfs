@@ -18,6 +18,12 @@ sudo docker pull ghcr.io/jalcocert/ask-multiple-pdfs:v1.0
 
 > You can find the tutorial for this project on [YouTube](https://youtu.be/dXxQ0LR-3Hg).
 
+<div align="center">
+  <a href="https://www.python.org/downloads/release/python-311">
+    <img alt="Python Version" src="https://img.shields.io/badge/python-3.11-blue.svg" />
+  </a>
+</div>
+
 ## Introduction
 ------------
 The MultiPDF Chat App is a Python application that allows you to chat with multiple PDF documents. You can ask questions about the PDFs using natural language, and the application will provide relevant responses based on the content of the documents. This app utilizes a language model to generate accurate answers to your queries. Please note that the app will only respond to questions related to the loaded PDFs.
