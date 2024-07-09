@@ -53,14 +53,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: github-pages  # Use the same name as uploaded artifact
-          path: ./dist   # Specify where to download artifacts
+          path: ./Z_Docs/dist   # Specify where to download artifacts
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: ./dist  # Specify the folder or artifact name to deploy
+          artifact_name: ./Z_Docs/dist  # Specify the folder or artifact name to deploy
 
 
 
