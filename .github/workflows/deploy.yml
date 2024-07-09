@@ -1,0 +1,93 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+
+      - name: Change directory to Z_Docs
+        run: cd Z_Docs
+
+      - name: Install dependencies using pnpm
+        run: pnpm install
+
+      - name: Build the site
+        run: pnpm run build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          folder: ./dist
+
+
+# name: Deploy to GitHub Pages
+
+# on:
+#   # Trigger the workflow when a push is made to any branch
+#   push:
+#   # Allows you to run this workflow manually from the Actions tab on GitHub.
+#   workflow_dispatch:
+
+# # Allow this job to clone the repo and create a page deployment
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout your repository using git
+#         uses: actions/checkout@v3
+#       - name: Install, build, and upload your site
+#         uses: withastro/action@v2
+#         with:
+#           package-manager: pnpm@9
+
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
