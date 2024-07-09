@@ -17,21 +17,27 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+      
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Change directory to Z_Docs
-        run: cd Z_Docs
+        working-directory: ./Z_Docs
+        run: echo "Changed directory to Z_Docs"
 
       - name: Install dependencies using pnpm
+        working-directory: ./Z_Docs
         run: pnpm install
 
       - name: Build the site
+        working-directory: ./Z_Docs
         run: pnpm run build
 
-      - name: Upload artifacts
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./dist
+          path: ./Z_Docs/dist
 
   deploy:
     needs: build
@@ -43,7 +49,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
-      - name: Download artifacts
+      - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
           name: build
@@ -54,6 +60,7 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           folder: ./dist
+
 
 
 # name: Deploy to GitHub Pages
