@@ -36,8 +36,8 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: build
-          path: ./Z_Docs/dist
+          name: github-pages  # Use a meaningful name here
+          path: ./Z_Docs/dist   # Adjust path based on your build output
 
   deploy:
     needs: build
@@ -52,14 +52,16 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: ./dist
+          name: github-pages  # Use the same name as uploaded artifact
+          path: ./dist   # Specify where to download artifacts
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          folder: ./dist
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: ./dist  # Specify the folder or artifact name to deploy
+
 
 
 
