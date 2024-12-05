@@ -1,10 +1,12 @@
 # MultiPDF Chat App
 
 * Original: https://github.com/alejandro-ao/ask-multiple-pdfs
-* Improved:
+* **Improved**:
    * No need to hardcode API's: can be passed as input in UI / as environment variable
    * Docker Container with dependencies
    * Added Github Actions CI/CD
+ 
+[I commented the process **here** →](https://jalcocert.github.io/JAlcocerT/how-to-chat-with-pdfs/)
 
 Use the build docker Image with [this configuration](https://github.com/JAlcocerT/ask-multiple-pdfs/blob/main/Z_Deploy_me/Docker-Compose-Stack.yml):
 
